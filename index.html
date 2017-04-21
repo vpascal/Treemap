@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="date" content="2016-04-21" />
+
+ <link rel="stylesheet" href="style.css">
+<script src="http://www.d3plus.org/js/d3.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+<script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<body></body>
+
+<div class="dropdown">
+<label>Filter by</label>
+
+<select id="level">
+    <option selected="selected">All</option>
+    <option>Graduate</option>
+    <option>Undergraduate</option>
+</select>
+
+</div>
+ 
+
+<div id="viz"></div>
+
+<script>
+
+
+
+function plot(data, div){
+
+  var visualization = d3plus.viz()
+      .container(div)
+      .data(data)
+      .type("tree_map")
+      .id([ "naics2_descr","naics3_descr", "Department"])
+      .size("count")
+      .font({ "family": "Roboto Condensed, sans-serif"})
+      .labels({"align": "left", "valign": "top"})
+      .font({ "size": 16 }) 
+      .title("Employment by Sector")
+      .time({"value": "AY", "solo": 2014})
+      .draw()
+
+}
+
+plot("final.csv","#viz");
+
+
+$("#level").change(function () {
+
+    if($("#level :selected").val()=="Undergraduate")
+
+    {
+      $('#viz').empty();
+      plot("Ugrad.csv","#viz");
+
+    } else if ($("#level :selected").val()=="Graduate") {
+        $('#viz').empty();
+        plot("Grad.csv","#viz");
+    }
+    else {    
+              $('#viz').empty();
+              plot("final.csv","#viz");
+
+    }
+});
+
+
+</script>
+
+
+
+
