@@ -38,9 +38,17 @@ var myset = []
 
 
 function reader (file, variable, condition){
+
 d3.csv(file, function(error, state_crime) {
   if (error) return console.error(error);
   
+
+  state_crime = state_crime.filter(function(d){
+
+       return d[variable] == condition;
+  })
+
+
   state_crime.forEach(function(d) {
     d3.keys(d).forEach(function(k){
       if(k == "count" & k != "AY"){
@@ -49,11 +57,6 @@ d3.csv(file, function(error, state_crime) {
     })
   })
 
-
-  state_crime = state_crime.filter(function(d){
-    
-    return 
-  })
 
 for ( var i=0; i < state_crime.length; i++){
  
@@ -66,11 +69,10 @@ myset[i] = {"AY" : state_crime[i].AY, "Department" : state_crime[i].Department, 
  
 
 
-reader("final.csv","Department");
-/*
+reader("final.csv","AY","2012");
 make_viz(myset);
 
-
+/*
 $("#level").change(function () {
 
     if($("#level :selected").val()=="Undergraduate")
