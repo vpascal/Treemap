@@ -16,10 +16,7 @@
 <script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
-<body></body>
-
-<div class="dropdown">
-<label>Filter by</label>
+<body>
 
 <select id="level">
     <option selected="selected">All</option>
@@ -27,33 +24,95 @@
     <option>Undergraduate</option>
 </select>
 
-</div>
- 
-
 <div id="viz"></div>
 
-<script>
+<script type="text/javascript"> 
+/*
+  var attributes = [
+    {"naics2_descr": "Education", "hex": "#F24747"},
+    {"naics2_descr": "Retail", "hex": "#C5A233"},
+    {"naics2_descr": "Accommodation & Food Services", "hex": "#3F6662"},
+    {"naics2_descr": "Health Care & Social Assistance", "hex": "#187ED0"},
+    {"naics2_descr": "Arts, Entertainment, & Recreation", "hex": "#FDBA91"},
+    {"naics2_descr": "Admin. & Support & Waste Management & Remediation Services", "hex": "#C32B97"},
+    {"naics2_descr": "Other Services", "hex": "#FDBA70"},
+    {"naics2_descr": "Public Administration", "hex": "#5BA5D0"},
+    {"naics2_descr": "Professional, Scientific, & Technical Services", "hex": "#FBF096"},
+    {"naics2_descr": "Manufacturing", "hex": "#45778B"},
+    {"naics2_descr": "Finance & Insurance", "hex": "#E57352"},
+    {"naics2_descr": "Transportation & Warehousing", "hex": "#4233C5"},
+    {"naics2_descr": "Construction", "hex": "#C45532"},
+    {"naics2_descr": "Wholesale Trade", "hex": "#33C5B3"},
+    {"naics2_descr": "Information", "hex": "#956587"},
+    {"naics2_descr": "Real Estate & Rental & Leasing", "hex": "#B2BA89"},
+    {"naics2_descr": "Management of Companies & Enterprises", "hex": "#FFC7CE"},
+    {"naics2_descr": "Agriculture, Forestry, Fishing & Hunting", "hex": "#FFD4AA"},
+    {"naics2_descr": "Mining, Quarrying, & Oil & Gas Extraction", "hex": "#FFD4AA"}
+  ]
 
 
+*/
 
-function plot(data, div){
-
+function make_viz(data){
   var visualization = d3plus.viz()
-      .container(div)
+      .container("#viz")
       .data(data)
       .type("tree_map")
-      .id([ "naics2_descr","naics3_descr", "Department"])
+      .id(["naics2_descr","naics3_descr"])
+      .font({ "family": "Pathway Gothic One, sans-serif"})
       .size("count")
-      .font({ "family": "Roboto Condensed, sans-serif"})
-      .labels({"align": "left", "valign": "top"})
-      .font({ "size": 16 }) 
-      .title("Employment by Sector")
       .time({"value": "AY", "solo": 2014})
+      .labels({"align": "left", "valign": "top"})
+      .title("Employment by Sector")
+      .title({
+          "font" : { "family": "Palanquin, sans-serif",
+                      "size" : 20,
+                      "transform" : "uppercase"
+                      }
+        })
+      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+    /* .attrs(attributes)
+      .color("hex")
+    */
       .draw()
-
 }
 
-plot("final.csv","#viz");
+
+
+var myset = []
+
+function reader (file, variable, condition){
+
+d3.csv(file, function(error, state_crime) {
+  if (error) return console.error(error);
+  
+
+  state_crime = state_crime.filter(function(d){
+
+       return d[variable] == condition;
+  })
+
+
+  state_crime.forEach(function(d) {
+    d3.keys(d).forEach(function(k){
+      if(k == "count" & k != "AY"){
+        d[k] = +d[k]
+      }
+    })
+  })
+
+
+for ( var i=0; i < state_crime.length; i++){
+ 
+myset[i] = {"AY" : state_crime[i].AY, "Department" : state_crime[i].Department, "Level" : state_crime[i].Level,
+            "naics2_descr" : state_crime[i].naics2_descr,  "naics3_descr" : state_crime[i].naics3_descr, "count" : state_crime[i].count}
+         }
+       
+})
+}
+
+reader("final.csv","Level","U");
+make_viz(myset);
 
 
 $("#level").change(function () {
@@ -62,22 +121,27 @@ $("#level").change(function () {
 
     {
       $('#viz').empty();
-      plot("Ugrad.csv","#viz");
+          myset = []
+          reader("final.csv","Level","U");
+          make_viz(myset);
 
     } else if ($("#level :selected").val()=="Graduate") {
         $('#viz').empty();
-        plot("Grad.csv","#viz");
+          myset = []
+          reader("final.csv","Level","G");
+          make_viz(myset);
+
     }
     else {    
               $('#viz').empty();
-              plot("final.csv","#viz");
+                myset = []
+                reader("final.csv");
+                make_viz(myset);
+
 
     }
 });
 
-
-</script>
-
-
-
-
+  </script>
+</body>
+</html>
