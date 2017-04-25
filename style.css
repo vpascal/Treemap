@@ -3,17 +3,18 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin:700');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-#viz {
+#treemap {
 
  width:70%;
  height: 550px;	
 
 }	
 
+#bar {
 
-#myset{
+ width:40%;
+ height: 250px;	
 
-	margin: 20px;
-	
-}
+}	
+
 

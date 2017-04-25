@@ -24,9 +24,12 @@
     <option>Undergraduate</option>
 </select>
 
-<div id="viz"></div>
+<div id="treemap"></div>
+<div id="bar"></div>
 
 <script type="text/javascript"> 
+
+//trying custom color scheme
 /*
   var attributes = [
     {"naics2_descr": "Education", "hex": "#F24747"},
@@ -50,12 +53,13 @@
     {"naics2_descr": "Mining, Quarrying, & Oil & Gas Extraction", "hex": "#FFD4AA"}
   ]
 
-
 */
+
+//custom ploting function; should probably modify it to be more generic
 
 function make_viz(data){
   var visualization = d3plus.viz()
-      .container("#viz")
+      .container("#treemap")
       .data(data)
       .type("tree_map")
       .id(["naics2_descr","naics3_descr"])
@@ -77,23 +81,23 @@ function make_viz(data){
       .draw()
 }
 
-
+// creating a function to read in the employment data and storing it in the myset var
 
 var myset = []
 
 function reader (file, variable, condition){
 
-d3.csv(file, function(error, state_crime) {
+d3.csv(file, function(error, temp) {
   if (error) return console.error(error);
   
 
-  state_crime = state_crime.filter(function(d){
+  temp = temp.filter(function(d){
 
        return d[variable] == condition;
   })
 
 
-  state_crime.forEach(function(d) {
+  temp.forEach(function(d) {
     d3.keys(d).forEach(function(k){
       if(k == "count" & k != "AY"){
         d[k] = +d[k]
@@ -102,38 +106,84 @@ d3.csv(file, function(error, state_crime) {
   })
 
 
-for ( var i=0; i < state_crime.length; i++){
+for ( var i=0; i < temp.length; i++){
  
-myset[i] = {"AY" : state_crime[i].AY, "Department" : state_crime[i].Department, "Level" : state_crime[i].Level,
-            "naics2_descr" : state_crime[i].naics2_descr,  "naics3_descr" : state_crime[i].naics3_descr, "count" : state_crime[i].count}
+myset[i] = {"AY" : temp[i].AY, "Department" : temp[i].Department, "Level" : temp[i].Level,
+            "naics2_descr" : temp[i].naics2_descr,  "naics3_descr" : temp[i].naics3_descr, "count" : temp[i].count}
          }
        
 })
 }
 
+// Loading the time-to-employment file and storing it in the time var 
+
+var time = []
+
+d3.csv("Time.csv",function(data){
+  data.forEach(function (l){
+    l.Value = +l.Value
+
+for ( var i=0; i < data.length; i++){
+ 
+time[i] = {"Year" : data[i].Year, "Level" : data[i].Level, "Period" : data[i].Period, "Value" : data[i].Value}
+         }
+  });
+});
+
+// drawing initial treemap
+
 reader("final.csv","Level","U");
 make_viz(myset);
 
+// drawing a bar chart
+
+var barchart = d3plus.viz()
+    .container("#bar")
+    .data(time)
+    .type("bar")
+    .id("Period")
+    .x("Year")
+    .y("Value")
+        .ui([
+      {
+        "label" : "Level",
+        "type" : "toggle",
+        "value" : [{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
+        "method" : function(value, viz){
+        if(value == "Undergraduate"){
+          viz.data(time.filter(function(x){return x.Level == "Undergraduate"}))
+          viz.id({"value": "Period"}).draw();
+        }
+        else {
+          viz.data(time.filter(function(x){return x.Level == "Graduate"}))
+          viz.id({"value": "Period"}).draw();
+        }
+        }
+      }
+    ])
+    .draw()
+
+// interactivity with dropdown controls 
 
 $("#level").change(function () {
 
     if($("#level :selected").val()=="Undergraduate")
 
     {
-      $('#viz').empty();
+      $('#treemap').empty();
           myset = []
           reader("final.csv","Level","U");
           make_viz(myset);
 
     } else if ($("#level :selected").val()=="Graduate") {
-        $('#viz').empty();
+        $('#treemap').empty();
           myset = []
           reader("final.csv","Level","G");
           make_viz(myset);
 
     }
     else {    
-              $('#viz').empty();
+              $('#treemap').empty();
                 myset = []
                 reader("final.csv");
                 make_viz(myset);
