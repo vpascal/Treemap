@@ -11,9 +11,9 @@
 <meta name="date" content="2016-04-21" />
 
  <link rel="stylesheet" href="style.css">
-<script src="http://www.d3plus.org/js/d3.js"></script>
-<script src="http://www.d3plus.org/js/d3plus.js"></script>
-<script type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="d3plus/d3.js"></script>
+<script src="d3plus/d3plus.js"></script>
+<script src="d3plus/jquery.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
 <body>
@@ -57,6 +57,8 @@
 
 //custom ploting function; should probably modify it to be more generic
 
+var myset = []
+
 function make_viz(data){
   var visualization = d3plus.viz()
       .container("#treemap")
@@ -82,8 +84,6 @@ function make_viz(data){
 }
 
 // creating a function to read in the employment data and storing it in the myset var
-
-var myset = []
 
 function reader (file, variable, condition){
 
@@ -122,6 +122,7 @@ var time = []
 d3.csv("Time.csv",function(data){
   data.forEach(function (l){
     l.Value = +l.Value
+    l.Year = +l.Year
 
 for ( var i=0; i < data.length; i++){
  
@@ -132,7 +133,7 @@ time[i] = {"Year" : data[i].Year, "Level" : data[i].Level, "Period" : data[i].Pe
 
 // drawing initial treemap
 
-reader("final.csv","Level","U");
+reader("final.csv");
 make_viz(myset);
 
 // drawing a bar chart
@@ -141,16 +142,21 @@ var barchart = d3plus.viz()
     .container("#bar")
     .data(time)
     .type("bar")
-    .id("Period")
-    .x("Year")
+    .id("Year")
+    .x("Period")
     .y("Value")
-    .ui([
+    .time({"value": "Year", "solo": 2013})
+ .ui([
       {
         "label" : "Level",
         "type" : "button",
-        "value" : [{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
+        "value" : [{"College":"College"},{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
         "method" : function(value, viz){
-        if(value == "Undergraduate"){
+        if(value == "College"){
+          viz.data(time.filter(function(x){return x.Level == "College"}))
+          viz.id({"value": "Period"}).draw();
+        }
+        else if (value == "Undergraduate"){
           viz.data(time.filter(function(x){return x.Level == "Undergraduate"}))
           viz.id({"value": "Period"}).draw();
         }
@@ -160,9 +166,9 @@ var barchart = d3plus.viz()
         }
         }
       }
-    ])
- .draw()
+       ])
 
+ .draw()
 
 // interactivity with dropdown controls 
 
