@@ -144,10 +144,10 @@ var barchart = d3plus.viz()
     .id("Period")
     .x("Year")
     .y("Value")
-        .ui([
+    .ui([
       {
         "label" : "Level",
-        "type" : "toggle",
+        "type" : "button",
         "value" : [{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
         "method" : function(value, viz){
         if(value == "Undergraduate"){
@@ -161,7 +161,8 @@ var barchart = d3plus.viz()
         }
       }
     ])
-    .draw()
+ .draw()
+
 
 // interactivity with dropdown controls 
 
