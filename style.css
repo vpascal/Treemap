@@ -3,18 +3,39 @@
 @import url('https://fonts.googleapis.com/css?family=Palanquin:700');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+
 #treemap {
 
- width:70%;
- height: 550px;	
+ height: 450px;	
 
 }	
 
 #bar {
 
- width:55%;
- height: 350px;	
+
+ height: 500px;	
 
 }	
 
+#mylegend {
+	font-size: 15px;
+	font-family: 'Palanquin', sans-serif;
+	text-transform: uppercase;
+	margin-bottom: 5px; 
+}
 
+#levelcontrol{
+
+	margin-top: 35px;
+}
+
+#level{
+	font-family: 'Raleway', sans-serif;
+}
+
+#datasource {
+
+	margin-top: 15px;
+	font-size: 10px;
+	font-style: italic;
+}
