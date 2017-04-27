@@ -52,7 +52,6 @@
     {"naics2_descr": "Agriculture, Forestry, Fishing & Hunting", "hex": "#FFD4AA"},
     {"naics2_descr": "Mining, Quarrying, & Oil & Gas Extraction", "hex": "#FFD4AA"}
   ]
-
 */
 
 //custom ploting function; should probably modify it to be more generic
@@ -119,17 +118,23 @@ myset[i] = {"AY" : temp[i].AY, "Department" : temp[i].Department, "Level" : temp
 
 var time = []
 
-d3.csv("Time.csv",function(data){
-  data.forEach(function (l){
-    l.Value = +l.Value
-    l.Year = +l.Year
+d3.csv("other.csv",function(data){
+   data.forEach(function(d) {
+    d3.keys(d).forEach(function(k){
+      if(k != "Period"){
+        d[k] = +d[k]
+      }
+    })
+  })
+
 
 for ( var i=0; i < data.length; i++){
  
-time[i] = {"Year" : data[i].Year, "Level" : data[i].Level, "Period" : data[i].Period, "Value" : data[i].Value}
+time[i] = {"Year" : data[i].Year, "Period" : data[i].Period, "College" : data[i].College, "Undergraduate" : data[i].Undergraduate,
+			"Graduate" : data[i].Graduate}
          }
   });
-});
+
 
 // drawing initial treemap
 
@@ -142,33 +147,41 @@ var barchart = d3plus.viz()
     .container("#bar")
     .data(time)
     .type("bar")
-    .id("Year")
+    .id("Period")
     .x("Period")
-    .y("Value")
+    .y("College")
     .time({"value": "Year", "solo": 2013})
- .ui([
+   .ui([
       {
-        "label" : "Level",
+        "label" : "Select Level",
         "type" : "button",
         "value" : [{"College":"College"},{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
         "method" : function(value, viz){
         if(value == "College"){
-          viz.data(time.filter(function(x){return x.Level == "College"}))
-          viz.id({"value": "Period"}).draw();
+          viz.y({"value": "College"}).draw();
         }
         else if (value == "Undergraduate"){
-          viz.data(time.filter(function(x){return x.Level == "Undergraduate"}))
-          viz.id({"value": "Period"}).draw();
+         
+          viz.y({"value": "Undergraduate"}).draw();
         }
         else {
-          viz.data(time.filter(function(x){return x.Level == "Graduate"}))
-          viz.id({"value": "Period"}).draw();
+          
+          viz.y({"value": "Graduate"}).draw();
         }
         }
       }
        ])
+  	  .title("Percent Employed")
+      .title({
+          "font" : { "family": "Palanquin, sans-serif",
+                      "size" : 20,
+                      "transform" : "uppercase"
+                      }
+        })
+      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+      .order({"value": "Period"})
+     .draw()
 
- .draw()
 
 // interactivity with dropdown controls 
 
