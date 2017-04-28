@@ -22,29 +22,32 @@
 
 <div class="w3-row-padding">
 
-<div class="w3-col" style="width:10%"> 
+<div class="w3-col s2"> 
 <div id="levelcontrol">
-<form>
-  <fieldset>  
+
+ <fieldset>  
 <legend for = "level" id="mylegend"> Options: </legend>
 <h6>Select Level</h6>
 <select  id="level">
-  <option selected="selected">College</option>
+  	<option selected="selected">College</option>
     <option>Graduate</option>
     <option>Undergraduate</option>
-  </select>
- <p id="datasource"> Source: <a  href="http://oerc.osu.edu/"> Ohio Education Research Center</a></p>
-<p  id="datasource"> Industry sectors are based on the North American Industry Classification System (NAICS)<br>
+ </select>
+ <br>
+<h6>Notes:</h6>
+<p> Year is a graduation year </p>
+<p class="datasource"> Data source: <a href="http://oerc.osu.edu/"> Ohio Education Research Center</a></p>
+<p class="datasource"> Industry sectors are based on the North American Industry Classification System (NAICS)<br>
 Source: <a  href="http://www.census.gov/eos/www/naics/"> U.S. Census Bureau</a></p>
 </fieldset>
-</form>
+
 </div>
 </div>
 
- <div class="w3-col" style="width:50%"> 
+ <div class="w3-col s6"> 
    <div class="w3-container" id="treemap"></div>
  </div>
- <div class="w3-col" style="width:40%">
+ <div class="w3-col s4">
    <div class ="w3-container" id="bar"></div>
  </div>
 </div>
@@ -91,8 +94,8 @@ function make_viz(data){
       .labels({"align": "left", "valign": "top"})
       .title("Employment by Sector")
       .title({
-          "font" : { "family": "Palanquin, sans-serif",
-                      "size" : 20,
+          "font" : { "family": "Montserrat, sans-serif",
+                      "size" : 16,
                       "transform" : "uppercase"
                       }
         })
@@ -194,8 +197,8 @@ var barchart = d3plus.viz()
        ])
   	  .title("Percent Employed")
       .title({"sub": "*after graduation",
-          "font" : { "family": "Palanquin, sans-serif",
-                      "size" : 20,
+          "font" : { "family": "Montserrat, sans-serif",
+                      "size" : 16,
                       "transform" : "uppercase"
                       }
         })
