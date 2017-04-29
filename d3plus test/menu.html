@@ -31,10 +31,11 @@
  <fieldset>  
 <legend for = "level" id="mylegend"> Options: </legend>
 <h6>Select Level</h6>
-<select  id="level">
-  	<option selected="selected">College</option>
-    <option>Graduate</option>
-    <option>Undergraduate</option>
+<!-- <select  id="level" onchange="reader('final.csv')"> -->
+  <select  id="level">
+  <option value="College">College
+  <option value="U">Undergraduate
+  <option value="G">Graduate
  </select>
  <br>
 <h6>Notes:</h6>
@@ -58,9 +59,13 @@ Source: <a  href="http://www.census.gov/eos/www/naics/"> U.S. Census Bureau</a><
 
 <script type="text/javascript"> 
 
- var radioData = [
+
+
+var visualization = d3plus.viz().container("#treemap");
+
+var radioData = [
     {"value": "U", "text": "Undergraduate"},
-    {"value": "G", "text": "G"}
+    {"value": "G", "text": "Graduate"}
   ]
 
   var toggles = d3plus.form()
@@ -69,39 +74,20 @@ Source: <a  href="http://www.census.gov/eos/www/naics/"> U.S. Census Bureau</a><
     .text("text")
     .title("Radio Buttons")
     .type("toggle")
-    .focus("U",reader("final.csv"))
+    .focus(reader("final.csv"))
     .draw()
 
 
 
-function make_viz(data){
-  var visualization = d3plus.viz()
-      .container("#treemap")
-      .data(data)
-      .type("tree_map")
-      .id(["naics2_descr","naics3_descr"])
-      .font({ "family": "Pathway Gothic One, sans-serif"})
-      .size("count")
-      .time({"value": "AY", "solo": 2014})
-      .labels({"align": "left", "valign": "top"})
-      .title("Employment by Sector")
-      .title({
-          "font" : { "family": "Montserrat, sans-serif",
-                      "size" : 16,
-                      "transform" : "uppercase"
-                      }
-        })
-      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
-      .draw()
-}
-
-// creating a function to read in the employment data and storing it in the myset var
-
-var myset = []
-
 function reader (file){
 
-d3.csv(file, function(error, temp) {
+
+/*  using external form controls
+var e = document.getElementById("level");
+var dropdownvalue = e.options[e.selectedIndex].value;
+*/
+
+  d3.csv(file, function(error, temp) {
   if (error) return console.error(error);
   
 
@@ -119,21 +105,33 @@ d3.csv(file, function(error, temp) {
     })
   })
 
-
-for ( var i=0; i < temp.length; i++){
- 
-myset[i] = {"AY" : temp[i].AY, "Department" : temp[i].Department, "Level" : temp[i].Level,
-            "naics2_descr" : temp[i].naics2_descr,  "naics3_descr" : temp[i].naics3_descr, "count" : temp[i].count}
-         }
+	 visualization
+      .data(temp)
+      .type("tree_map")
+      .id(["naics2_descr","naics3_descr"])
+      .font({ "family": "Pathway Gothic One, sans-serif"})
+      .size("count")
+      .time({"value": "AY", "solo": 2014})
+      .labels({"align": "left", "valign": "top"})
+      .title("Employment by Sector")
+      .title({
+          "font" : { "family": "Montserrat, sans-serif",
+                      "size" : 16,
+                      "transform" : "uppercase"
+                      }
+        })
+      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+      .draw()
        
 })
+		temp=[]
 }
 
 
 // drawing initial treemap
 
 //reader("final.csv");
-make_viz(myset);
+//make_viz(myset);
 
 
 
