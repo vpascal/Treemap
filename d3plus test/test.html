@@ -10,10 +10,13 @@
 
 <meta name="date" content="2016-04-21" />
 
-<link rel="stylesheet" href="style.css">
-<script src="d3plus/d3.js"></script>
-<script src="d3plus/d3plus.js"></script>
-<script src="d3plus/jquery.min.js"></script>
+ <link rel="stylesheet" href="style.css">
+
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -165,7 +168,7 @@ time[i] = {"Year" : data[i].Year, "Period" : data[i].Period, "College" : data[i]
 reader("final.csv");
 make_viz(myset);
 
-// drawing a bar chart
+// drawing a bar chart and swapping dataset dynamically via ui controls - cool!
 
 var barchart = d3plus.viz()
     .container("#bar")
@@ -182,14 +185,15 @@ var barchart = d3plus.viz()
         "value" : [{"College":"College"},{"Undergraduate":"Undergraduate"}, {"Graduate":"Graduate"}],
         "method" : function(value, viz){
         if(value == "College"){
+          viz.data("other_1.csv");
           viz.y({"value": "College"}).draw();
         }
         else if (value == "Undergraduate"){
-         
+          viz.data("other_1.csv");
           viz.y({"value": "Undergraduate"}).draw();
         }
         else {
-          
+          viz.data("other_1.csv");
           viz.y({"value": "Graduate"}).draw();
         }
         }
