@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="date" content="2016-04-21" />
+
+ <link rel="stylesheet" href="style.css">
+
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<body>
+
+<div class="w3-row-padding">
+
+<div class="w3-col s2"> 
+<div id="levelcontrol">
+
+ <fieldset>  
+<legend for = "level" id="mylegend"> Options: </legend>
+<h6>Select Level</h6>
+<select  id="level">
+  	<option selected="selected">College</option>
+    <option>Graduate</option>
+    <option>Undergraduate</option>
+ </select>
+ <br>
+<h6>Notes:</h6>
+<p> Year is a graduation year </p>
+<p class="datasource"> Data source: <a href="http://oerc.osu.edu/"> Ohio Education Research Center</a></p>
+<p class="datasource"> Industry sectors are based on the North American Industry Classification System (NAICS)<br>
+Source: <a  href="http://www.census.gov/eos/www/naics/"> U.S. Census Bureau</a></p>
+</fieldset>
+
+</div>
+</div>
+
+ <div class="w3-col s6"> 
+   <div class="w3-container" id="treemap"></div>
+ </div>
+ <div class="w3-col s4">
+   <div class ="w3-container" id="bar"></div>
+ </div>
+</div>
+
+
+<script type="text/javascript"> 
+
+ var radioData = [
+    {"value": "U", "text": "Undergraduate"},
+    {"value": "G", "text": "G"}
+  ]
+
+  var toggles = d3plus.form()
+    .data(radioData)
+    .id("value")
+    .text("text")
+    .title("Radio Buttons")
+    .type("toggle")
+    .focus("U",reader("final.csv"))
+    .draw()
+
+
+
+function make_viz(data){
+  var visualization = d3plus.viz()
+      .container("#treemap")
+      .data(data)
+      .type("tree_map")
+      .id(["naics2_descr","naics3_descr"])
+      .font({ "family": "Pathway Gothic One, sans-serif"})
+      .size("count")
+      .time({"value": "AY", "solo": 2014})
+      .labels({"align": "left", "valign": "top"})
+      .title("Employment by Sector")
+      .title({
+          "font" : { "family": "Montserrat, sans-serif",
+                      "size" : 16,
+                      "transform" : "uppercase"
+                      }
+        })
+      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+      .draw()
+}
+
+// creating a function to read in the employment data and storing it in the myset var
+
+var myset = []
+
+function reader (file){
+
+d3.csv(file, function(error, temp) {
+  if (error) return console.error(error);
+  
+
+  temp = temp.filter(function(d){
+
+       return d.Level == toggles.focus();
+  })
+
+
+  temp.forEach(function(d) {
+    d3.keys(d).forEach(function(k){
+      if(k == "count" & k != "AY"){
+        d[k] = +d[k]
+      }
+    })
+  })
+
+
+for ( var i=0; i < temp.length; i++){
+ 
+myset[i] = {"AY" : temp[i].AY, "Department" : temp[i].Department, "Level" : temp[i].Level,
+            "naics2_descr" : temp[i].naics2_descr,  "naics3_descr" : temp[i].naics3_descr, "count" : temp[i].count}
+         }
+       
+})
+}
+
+
+// drawing initial treemap
+
+//reader("final.csv");
+make_viz(myset);
+
+
+
+ </script>
+</body>
+</html>
