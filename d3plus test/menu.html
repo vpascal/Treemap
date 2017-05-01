@@ -74,7 +74,7 @@ var radioData = [
     .text("text")
     .title("Radio Buttons")
     .type("toggle")
-    .focus(reader("final.csv"))
+    .focus(reader("finalother.csv"))
     .draw()
 
 
@@ -90,16 +90,16 @@ var dropdownvalue = e.options[e.selectedIndex].value;
   d3.csv(file, function(error, temp) {
   if (error) return console.error(error);
   
-
+/*
   temp = temp.filter(function(d){
 
        return d.Level == toggles.focus();
   })
 
-
+*/
   temp.forEach(function(d) {
     d3.keys(d).forEach(function(k){
-      if(k == "count" & k != "AY"){
+      if(k == "G" & k != "AY"){
         d[k] = +d[k]
       }
     })
@@ -110,7 +110,7 @@ var dropdownvalue = e.options[e.selectedIndex].value;
       .type("tree_map")
       .id(["naics2_descr","naics3_descr"])
       .font({ "family": "Pathway Gothic One, sans-serif"})
-      .size("count")
+      .size("G")
       .time({"value": "AY", "solo": 2014})
       .labels({"align": "left", "valign": "top"})
       .title("Employment by Sector")
@@ -124,7 +124,7 @@ var dropdownvalue = e.options[e.selectedIndex].value;
       .draw()
        
 })
-		temp=[]
+		
 }
 
 

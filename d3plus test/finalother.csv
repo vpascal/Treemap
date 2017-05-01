@@ -1,0 +1,305 @@
+AY,Department,naics2_descr,naics3_descr,Graduate,Undergraduate
+2012,CHE,Accommodation & Food Services,Food Services & Drinking Places,2,0
+2012,CHE,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",1,0
+2012,CHE,Education,Educational Services,19,0
+2012,CHE,Health Care & Social Assistance,Ambulatory Health Care Services,13,0
+2012,CHE,Health Care & Social Assistance,Hospitals,4,0
+2012,CHE,Health Care & Social Assistance,Nursing & Residential Care Facilities,3,0
+2012,CHE,Health Care & Social Assistance,Social Assistance,10,0
+2012,CHE,Public Administration,Administration of Human Resource Programs,2,0
+2012,CHE,Retail,Clothing & Clothing Accessories Stores,1,0
+2012,CHE,Retail,Food & Beverage Stores,1,0
+2012,CHE,Retail,General Merch&ise Stores,3,0
+2012,CHE,Transportation & Warehousing,Warehousing & Storage,1,0
+2012,ES,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,1,0
+2012,ES,Education,Educational Services,30,0
+2012,ES,Health Care & Social Assistance,Nursing & Residential Care Facilities,1,0
+2012,ES,Health Care & Social Assistance,Social Assistance,1,0
+2012,ES,Retail,Building Material & Garden Equipment & Supplies Dealers,1,0
+2012,HCS,Accommodation & Food Services,Accommodation,0,13
+2012,HCS,Accommodation & Food Services,Food Services & Drinking Places,0,10
+2012,HCS,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,3
+2012,HCS,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,3
+2012,HCS,"Arts, Entertainment, & Recreation","Museums, Historical Sites & Similar Institutions",0,1
+2012,HCS,"Arts, Entertainment, & Recreation","Performing Arts, Spectator Sports & Other",0,1
+2012,HCS,Education,Educational Services,1,5
+2012,HCS,Finance & Insurance,Credit Intermediation & Related Activities,0,1
+2012,HCS,Health Care & Social Assistance,Ambulatory Health Care Services,0,1
+2012,HCS,Health Care & Social Assistance,Hospitals,0,1
+2012,HCS,Management of Companies & Enterprises,Management of Companies & Enterprises,0,4
+2012,HCS,Manufacturing,Fabricated Metal Product Manufacturing,0,1
+2012,HCS,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,2
+2012,HCS,Retail,Building Material & Garden Equipment & Supplies Dealers,0,1
+2012,HCS,Retail,Clothing & Clothing Accessories Stores,0,9
+2012,HCS,Retail,Electronics & Appliance Stores,0,1
+2012,HCS,Retail,Food & Beverage Stores,0,1
+2012,HCS,Retail,General Merch&ise Stores,0,5
+2012,HCS,Retail,Health & Personal Care Stores,0,2
+2012,HCS,Retail,Miscellaneous Store Retailers,0,3
+2012,HCS,Retail,Nonstore Retailers,0,2
+2012,HCS,Retail,"Sporting Goods, Hobby, Book & Music Stores",0,1
+2012,HCS,Transportation & Warehousing,Couriers & Messengers,0,1
+2012,HCS,Wholesale Trade,"Merchant Wholesalers, Nondurable Goods",0,1
+2012,MUS,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,1
+2012,MUS,Education,Educational Services,0,10
+2012,MUS,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,1
+2012,MUS,Retail,Food & Beverage Stores,0,2
+2012,MUS,Retail,Health & Personal Care Stores,0,1
+2012,MUS,Retail,"Sporting Goods, Hobby, Book & Music Stores",0,1
+2012,RSP,Accommodation & Food Services,Food Services & Drinking Places,0,5
+2012,RSP,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,1
+2012,RSP,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,2
+2012,RSP,"Arts, Entertainment, & Recreation","Performing Arts, Spectator Sports & Other",0,1
+2012,RSP,Education,Educational Services,5,2
+2012,RSP,Finance & Insurance,Insurance Carriers & Other,1,0
+2012,RSP,Health Care & Social Assistance,Nursing & Residential Care Facilities,0,1
+2012,RSP,Health Care & Social Assistance,Social Assistance,0,1
+2012,RSP,Manufacturing,Food Manufacturing,0,1
+2012,RSP,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",0,1
+2012,RSP,Public Administration,"Justice, Public Order & Safety",0,1
+2012,RSP,Retail,Food & Beverage Stores,0,1
+2012,RSP,Retail,Nonstore Retailers,0,1
+2012,RSP,Retail,"Sporting Goods, Hobby, Book & Music Stores",0,2
+2012,RSP,Transportation & Warehousing,Couriers & Messengers,0,2
+2012,RSP,Wholesale Trade,"Merchant Wholesalers, Durable Goods",0,1
+2012,RSP,Wholesale Trade,"Merchant Wholesalers, Nondurable Goods",0,1
+2012,TE,Accommodation & Food Services,Accommodation,0,3
+2012,TE,Accommodation & Food Services,Food Services & Drinking Places,1,59
+2012,TE,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,3,16
+2012,TE,Admin. & Support & Waste Management & Remediation Services,Waste Mangement & Remediation Services,0,1
+2012,TE,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",3,22
+2012,TE,Construction,Construction of Buildings,0,2
+2012,TE,Construction,Specialty Trade Contractors,0,5
+2012,TE,Education,Educational Services,41,221
+2012,TE,Finance & Insurance,Credit Intermediation & Related Activities,0,6
+2012,TE,Health Care & Social Assistance,Ambulatory Health Care Services,1,7
+2012,TE,Health Care & Social Assistance,Hospitals,0,2
+2012,TE,Health Care & Social Assistance,Nursing & Residential Care Facilities,2,10
+2012,TE,Health Care & Social Assistance,Social Assistance,5,31
+2012,TE,Information,Motion Picture & Sound Recording Industries,0,2
+2012,TE,Management of Companies & Enterprises,Management of Companies & Enterprises,0,1
+2012,TE,Manufacturing,Fabricated Metal Product Manufacturing,0,1
+2012,TE,Manufacturing,Food Manufacturing,0,3
+2012,TE,Manufacturing,Furniture & Related Product Manufacturing,0,1
+2012,TE,Manufacturing,Miscellaneous Manufacturing,0,2
+2012,TE,Manufacturing,Nonmetallic Mineral Product Manufacturing,0,1
+2012,TE,Manufacturing,Primary Metal Manufacturing,0,1
+2012,TE,Other Services,Personal & Laundry Services,1,1
+2012,TE,Other Services,Private Households,0,2
+2012,TE,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",1,4
+2012,TE,Other Services,Repair & Maintenance,0,1
+2012,TE,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",1,8
+2012,TE,Public Administration,"Executive, Legislative & Other General Government Support",0,1
+2012,TE,Public Administration,"Justice, Public Order & Safety",0,2
+2012,TE,Real Estate & Rental & Leasing,Real Estate,0,2
+2012,TE,Real Estate & Rental & Leasing,Rental & Leasing Services,0,1
+2012,TE,Retail,Building Material & Garden Equipment & Supplies Dealers,0,4
+2012,TE,Retail,Clothing & Clothing Accessories Stores,1,11
+2012,TE,Retail,Food & Beverage Stores,1,8
+2012,TE,Retail,Gasoline Stations,0,4
+2012,TE,Retail,General Merch&ise Stores,0,10
+2012,TE,Retail,Health & Personal Care Stores,0,9
+2012,TE,Retail,Miscellaneous Store Retailers,0,2
+2012,TE,Retail,Motor Vehicle & Parts Dealers,0,2
+2012,TE,Retail,"Sporting Goods, Hobby, Book & Music Stores",1,5
+2012,TE,Transportation & Warehousing,Couriers & Messengers,0,2
+2012,TE,Transportation & Warehousing,Truck Transportation,0,1
+2012,TE,Transportation & Warehousing,Warehousing & Storage,0,2
+2012,TE,Wholesale Trade,"Merchant Wholesalers, Durable Goods",0,3
+2012,TE,Wholesale Trade,"Merchant Wholesalers, Nondurable Goods",0,3
+2012,TE,Wholesale Trade,Wholesale Electronic Markets & Agents & Brokers,0,1
+2012,TE,NA,Nonclassifiable,0,1
+2013,CHE,Accommodation & Food Services,Food Services & Drinking Places,1,0
+2013,CHE,Construction,Specialty Trade Contractors,1,0
+2013,CHE,Education,Educational Services,32,0
+2013,CHE,Health Care & Social Assistance,Ambulatory Health Care Services,6,0
+2013,CHE,Health Care & Social Assistance,Hospitals,1,0
+2013,CHE,Health Care & Social Assistance,Nursing & Residential Care Facilities,5,0
+2013,CHE,Information,Telecommunications,1,0
+2013,CHE,Manufacturing,Transportation Equipment Manufacturing,1,0
+2013,CHE,Other Services,Repair & Maintenance,1,0
+2013,CHE,Public Administration,Administration of Human Resource Programs,2,0
+2013,CHE,Retail,"Sporting Goods, Hobby, Book & Music Stores",1,0
+2013,CHE,Wholesale Trade,"Merchant Wholesalers, Durable Goods",2,0
+2013,CHE,Wholesale Trade,Wholesale Electronic Markets & Agents & Brokers,1,0
+2013,ES,Education,Educational Services,36,0
+2013,ES,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",1,0
+2013,HCS,Accommodation & Food Services,Accommodation,0,7
+2013,HCS,Accommodation & Food Services,Food Services & Drinking Places,0,11
+2013,HCS,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,5
+2013,HCS,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,4
+2013,HCS,Construction,Specialty Trade Contractors,0,1
+2013,HCS,Education,Educational Services,1,2
+2013,HCS,Health Care & Social Assistance,Ambulatory Health Care Services,0,1
+2013,HCS,Health Care & Social Assistance,Social Assistance,0,1
+2013,HCS,Management of Companies & Enterprises,Management of Companies & Enterprises,1,0
+2013,HCS,Manufacturing,Computer & Electronic Product Manufacturing,0,1
+2013,HCS,Other Services,Personal & Laundry Services,0,1
+2013,HCS,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,2
+2013,HCS,Real Estate & Rental & Leasing,Real Estate,0,1
+2013,HCS,Retail,Clothing & Clothing Accessories Stores,0,7
+2013,HCS,Retail,Food & Beverage Stores,0,1
+2013,HCS,Retail,General Merch&ise Stores,0,5
+2013,HCS,Retail,Health & Personal Care Stores,0,2
+2013,HCS,Retail,Nonstore Retailers,0,1
+2013,HCS,Transportation & Warehousing,Support Activities for Transportation,0,1
+2013,HCS,Wholesale Trade,"Merchant Wholesalers, Nondurable Goods",0,1
+2013,MUS,Accommodation & Food Services,Food Services & Drinking Places,0,4
+2013,MUS,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,1
+2013,MUS,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,2
+2013,MUS,Education,Educational Services,2,12
+2013,MUS,Health Care & Social Assistance,Nursing & Residential Care Facilities,0,1
+2013,MUS,Information,Motion Picture & Sound Recording Industries,0,1
+2013,MUS,Manufacturing,Chemical Manufacturing,0,1
+2013,MUS,Retail,Clothing & Clothing Accessories Stores,0,1
+2013,MUS,Retail,Gasoline Stations,0,1
+2013,MUS,Transportation & Warehousing,Couriers & Messengers,0,1
+2013,RSP,Accommodation & Food Services,Food Services & Drinking Places,0,4
+2013,RSP,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,3
+2013,RSP,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",1,4
+2013,RSP,"Arts, Entertainment, & Recreation","Museums, Historical Sites & Similar Institutions",0,1
+2013,RSP,Education,Educational Services,10,9
+2013,RSP,Health Care & Social Assistance,Social Assistance,0,3
+2013,RSP,Manufacturing,Furniture & Related Product Manufacturing,0,1
+2013,RSP,Manufacturing,Nonmetallic Mineral Product Manufacturing,0,1
+2013,RSP,Manufacturing,Paper Manufacturing,0,1
+2013,RSP,Manufacturing,Printing & Related Support Activities,1,1
+2013,RSP,Manufacturing,Textile Product Mills,1,0
+2013,RSP,Manufacturing,Wood Product Manufacturing,0,1
+2013,RSP,Other Services,Personal & Laundry Services,0,1
+2013,RSP,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,2
+2013,RSP,Public Administration,"Justice, Public Order & Safety",0,3
+2013,RSP,Retail,Building Material & Garden Equipment & Supplies Dealers,0,2
+2013,RSP,Retail,Clothing & Clothing Accessories Stores,0,1
+2013,RSP,Retail,Food & Beverage Stores,0,3
+2013,RSP,Retail,Health & Personal Care Stores,0,1
+2013,RSP,Retail,"Sporting Goods, Hobby, Book & Music Stores",0,1
+2013,RSP,Transportation & Warehousing,Truck Transportation,0,1
+2013,TE,Accommodation & Food Services,Accommodation,0,1
+2013,TE,Accommodation & Food Services,Food Services & Drinking Places,3,58
+2013,TE,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,1,14
+2013,TE,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",1,19
+2013,TE,"Arts, Entertainment, & Recreation","Museums, Historical Sites & Similar Institutions",0,3
+2013,TE,"Arts, Entertainment, & Recreation","Performing Arts, Spectator Sports & Other",0,2
+2013,TE,Construction,Construction of Buildings,0,3
+2013,TE,Construction,Specialty Trade Contractors,0,1
+2013,TE,Education,Educational Services,50,227
+2013,TE,Finance & Insurance,Credit Intermediation & Related Activities,0,6
+2013,TE,Finance & Insurance,Insurance Carriers & Other,0,2
+2013,TE,Health Care & Social Assistance,Ambulatory Health Care Services,1,3
+2013,TE,Health Care & Social Assistance,Hospitals,1,4
+2013,TE,Health Care & Social Assistance,Nursing & Residential Care Facilities,0,5
+2013,TE,Health Care & Social Assistance,Social Assistance,2,34
+2013,TE,Information,Motion Picture & Sound Recording Industries,0,1
+2013,TE,Information,Telecommunications,0,2
+2013,TE,Management of Companies & Enterprises,Management of Companies & Enterprises,0,1
+2013,TE,Manufacturing,Machinery Manufacturing,0,1
+2013,TE,Manufacturing,Miscellaneous Manufacturing,0,1
+2013,TE,Manufacturing,Nonmetallic Mineral Product Manufacturing,0,2
+2013,TE,Other Services,Personal & Laundry Services,0,3
+2013,TE,Other Services,Private Households,0,1
+2013,TE,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",0,17
+2013,TE,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,7
+2013,TE,Public Administration,Administration of Environmental Quality Programs,0,1
+2013,TE,Public Administration,Administration of Human Resource Programs,0,1
+2013,TE,Public Administration,"Executive, Legislative & Other General Government Support",0,3
+2013,TE,Public Administration,"Justice, Public Order & Safety",1,6
+2013,TE,Real Estate & Rental & Leasing,Real Estate,0,2
+2013,TE,Retail,Clothing & Clothing Accessories Stores,1,8
+2013,TE,Retail,Electronics & Appliance Stores,0,3
+2013,TE,Retail,Food & Beverage Stores,0,6
+2013,TE,Retail,Furniture & Home Furnishings Stores,0,1
+2013,TE,Retail,Gasoline Stations,0,5
+2013,TE,Retail,General Merch&ise Stores,0,13
+2013,TE,Retail,Health & Personal Care Stores,0,6
+2013,TE,Retail,Miscellaneous Store Retailers,0,4
+2013,TE,Retail,Motor Vehicle & Parts Dealers,0,1
+2013,TE,Retail,Nonstore Retailers,0,2
+2013,TE,Retail,"Sporting Goods, Hobby, Book & Music Stores",1,2
+2013,TE,Transportation & Warehousing,Couriers & Messengers,0,3
+2014,CHE,Accommodation & Food Services,Accommodation,1,0
+2014,CHE,Accommodation & Food Services,Food Services & Drinking Places,1,0
+2014,CHE,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,1,0
+2014,CHE,Education,Educational Services,16,0
+2014,CHE,Health Care & Social Assistance,Ambulatory Health Care Services,3,0
+2014,CHE,Health Care & Social Assistance,Nursing & Residential Care Facilities,2,0
+2014,CHE,Health Care & Social Assistance,Social Assistance,1,0
+2014,CHE,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",2,0
+2014,CHE,Public Administration,Administration of Human Resource Programs,1,0
+2014,CHE,Retail,Clothing & Clothing Accessories Stores,2,0
+2014,CHE,Retail,General Merch&ise Stores,1,0
+2014,ES,Accommodation & Food Services,Food Services & Drinking Places,1,0
+2014,ES,Education,Educational Services,17,0
+2014,ES,Health Care & Social Assistance,Ambulatory Health Care Services,1,0
+2014,ES,Information,Publishing Industries (except Internet),1,0
+2014,ES,Retail,Electronics & Appliance Stores,1,0
+2014,HCS,Accommodation & Food Services,Accommodation,0,3
+2014,HCS,Accommodation & Food Services,Food Services & Drinking Places,0,3
+2014,HCS,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,0,2
+2014,HCS,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,3
+2014,HCS,"Arts, Entertainment, & Recreation","Performing Arts, Spectator Sports & Other",0,1
+2014,HCS,Construction,Specialty Trade Contractors,0,1
+2014,HCS,Education,Educational Services,0,4
+2014,HCS,Other Services,Personal & Laundry Services,0,1
+2014,HCS,Real Estate & Rental & Leasing,Rental & Leasing Services,0,1
+2014,HCS,Retail,Clothing & Clothing Accessories Stores,0,7
+2014,HCS,Retail,General Merch&ise Stores,0,4
+2014,HCS,Retail,Miscellaneous Store Retailers,0,1
+2014,HCS,Retail,Motor Vehicle & Parts Dealers,0,1
+2014,HCS,Transportation & Warehousing,Water Transportation,0,1
+2014,HCS,Wholesale Trade,Wholesale Electronic Markets & Agents & Brokers,0,1
+2014,MUS,Accommodation & Food Services,Food Services & Drinking Places,0,3
+2014,MUS,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,1
+2014,MUS,Education,Educational Services,3,6
+2014,MUS,Health Care & Social Assistance,Ambulatory Health Care Services,0,1
+2014,MUS,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,1
+2014,MUS,Retail,Clothing & Clothing Accessories Stores,0,2
+2014,MUS,Retail,General Merch&ise Stores,0,1
+2014,RSP,Accommodation & Food Services,Accommodation,0,1
+2014,RSP,Accommodation & Food Services,Food Services & Drinking Places,1,2
+2014,RSP,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,1
+2014,RSP,"Arts, Entertainment, & Recreation","Performing Arts, Spectator Sports & Other",1,0
+2014,RSP,Education,Educational Services,8,4
+2014,RSP,Health Care & Social Assistance,Ambulatory Health Care Services,0,1
+2014,RSP,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",1,1
+2014,RSP,Public Administration,Administration of Environmental Quality Programs,0,2
+2014,RSP,Retail,Building Material & Garden Equipment & Supplies Dealers,0,2
+2014,RSP,Retail,Food & Beverage Stores,1,1
+2014,RSP,Retail,"Sporting Goods, Hobby, Book & Music Stores",0,1
+2014,RSP,Transportation & Warehousing,Couriers & Messengers,0,1
+2014,TE,Accommodation & Food Services,Accommodation,0,3
+2014,TE,Accommodation & Food Services,Food Services & Drinking Places,3,32
+2014,TE,Admin. & Support & Waste Management & Remediation Services,Administrative & Support Services,1,12
+2014,TE,"Agriculture, Forestry, Fishing & Hunting",Animal production,0,1
+2014,TE,"Agriculture, Forestry, Fishing & Hunting",Crop production,0,2
+2014,TE,"Arts, Entertainment, & Recreation","Amusement, Gambling & Recreation",0,13
+2014,TE,Construction,Specialty Trade Contractors,0,1
+2014,TE,Education,Educational Services,35,107
+2014,TE,Finance & Insurance,Credit Intermediation & Related Activities,0,3
+2014,TE,Finance & Insurance,Insurance Carriers & Other,0,1
+2014,TE,Finance & Insurance,"Securities, Commodity Contracts & Other Financial Investments & Related Activities",0,1
+2014,TE,Health Care & Social Assistance,Ambulatory Health Care Services,0,2
+2014,TE,Health Care & Social Assistance,Nursing & Residential Care Facilities,0,2
+2014,TE,Health Care & Social Assistance,Social Assistance,2,12
+2014,TE,Information,Motion Picture & Sound Recording Industries,0,1
+2014,TE,Manufacturing,Miscellaneous Manufacturing,1,0
+2014,TE,Manufacturing,Transportation Equipment Manufacturing,0,1
+2014,TE,"Mining, Quarrying, & Oil & Gas Extraction",Mining (except Oil & Gas),0,1
+2014,TE,Other Services,Personal & Laundry Services,0,3
+2014,TE,Other Services,"Religious, Grantmaking, Civic & Similar Organizationss",0,6
+2014,TE,"Professional, Scientific, & Technical Services","Professional, Scientific & Technical Services",0,2
+2014,TE,Public Administration,Administration of Environmental Quality Programs,0,1
+2014,TE,Public Administration,"Executive, Legislative & Other General Government Support",0,2
+2014,TE,Public Administration,"Justice, Public Order & Safety",0,3
+2014,TE,Real Estate & Rental & Leasing,Rental & Leasing Services,0,1
+2014,TE,Retail,Building Material & Garden Equipment & Supplies Dealers,0,2
+2014,TE,Retail,Clothing & Clothing Accessories Stores,0,10
+2014,TE,Retail,Food & Beverage Stores,0,11
+2014,TE,Retail,Gasoline Stations,0,1
+2014,TE,Retail,General Merch&ise Stores,0,9
+2014,TE,Retail,Health & Personal Care Stores,0,1
+2014,TE,Retail,Miscellaneous Store Retailers,0,1
+2014,TE,Retail,Nonstore Retailers,0,1
+2014,TE,Transportation & Warehousing,Couriers & Messengers,0,1
+2014,TE,Transportation & Warehousing,Scenic & Sightseeing Transportation,0,1
+2014,TE,Transportation & Warehousing,Warehousing & Storage,0,1
