@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="date" content="2016-04-21" />
+
+ <link rel="stylesheet" href="style.css">
+
+<script src="https://d3plus.org/js/d3.js"></script>
+<script src="https://d3plus.org/js/d3plus.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<body>
+
+ <div class="w3-container" id="treemap"></div>
+
+<script type="text/javascript"> 
+
+
+var visualization = d3plus.viz().container("#treemap");
+
+  d3.csv("finalother.csv", function(error, temp) {
+  if (error) return console.error(error);
+  console.log(temp);
+
+
+  temp.forEach(function(d) {
+    d3.keys(d).forEach(function(k){
+      if(k == "n"){
+        d[k] = +d[k]
+      }
+    })
+  })
+
+	 visualization
+      .data(temp)
+      .type("tree_map")
+      .id(['naics2_descr','naics3_descr'])
+      .font({ "family": "Pathway Gothic One, sans-serif"})
+      .size({'solo': function(x){return x>10},'value': 'n'})
+      .labels({"align": "left", "valign": "top"})
+      .title("Employment by Sector")
+      .title({
+          "font" : { "family": "Montserrat, sans-serif",
+                      "size" : 16,
+                      "transform" : "uppercase"
+                      }
+        })
+      .tooltip({'children':0})   
+      .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+      .mouse({            
+        
+        "click": function(value, viz){
+        if (value.naics2_descr != "Information") {return true;}
+      }  
+    }) 
+      .dev(true)  
+      .draw()
+       
+})
+		
+
+
+ </script>
+</body>
+</html>
