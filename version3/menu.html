@@ -59,14 +59,27 @@ var visualization = d3plus.viz().container("#treemap");
         })
       .tooltip({'children':0})   
       .tooltip({"font" : { "family": "Raleway, sans-serif"} })
+      .tooltip({"sub": "desc"})
       .mouse({            
         
         "click": function(value, viz){
         if (value.naics2_descr != "Information") {return true;}
       }  
     }) 
-      .dev(true)  
-      .draw()
+      .ui([
+      {
+        "label" : "Change View",
+        "type" : "button",
+        "value" : [{"NAICS 2 digit":"naics2_descr"},{"NAICS 3 digit":"naics3_descr"}],
+        "method" : function(value, viz){
+        if(value == "naics3_descr"){
+          viz.id({"value": "naics3_descr"}).draw();
+        }
+        else{
+          viz.id({"value" : ['naics2_descr','naics3_descr']}).draw();
+        }}}
+       ])
+     .draw()
        
 })
 		
