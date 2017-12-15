@@ -63,9 +63,10 @@ var visualization = d3plus.viz().container("#treemap");
       .mouse({            
         
         "click": function(value, viz){
-        if (value.naics2_descr != "Information") {return true;}
+        if (value.naics2_descr != "Information" & value.naics2_descr!='Manufacturing')  {return true;}
+     
       }  
-    }) 
+    })
       .ui([
       {
         "label" : "Change View",
