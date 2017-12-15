@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://d3plus.org/js/d3.js"></script>
+<script src="https://d3plus.org/js/d3plus.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<body>
+
+ <div id="bar"></div>
+
+<script type="text/javascript"> 
+
+
+var visualization = d3plus.viz().container("#bar");
+
+  d3.csv("employment.csv", function(error, temp) {
+  if (error) return console.error(error);
+  console.log(temp);
+
+
+  temp.forEach(function(d) {
+    d3.keys(d).forEach(function(k){
+      if(k == "n"){
+        d[k] = +d[k]
+      }
+    })
+  })
+
+  var visualization = d3plus.viz()
+    .data(data)
+    .type("bar")
+    .id("Unit")
+    .x("Unit")
+    .y("Six_Months_Percent")
+    .draw()
+
+       
+})
+		
+
+
+ </script>
+</body>
+</html>
